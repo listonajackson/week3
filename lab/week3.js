@@ -1,5 +1,5 @@
 let numberOfProducts        // expects a Number 
-let products = database.products // expects an Array of product data
+let products                // expects an Array of product data
 let promotion1Description   // expects a String describing the promotion
 let promotion2Description   // expects a String describing the promotion
 let promotion3Description   // expects a String describing the promotion
@@ -29,24 +29,35 @@ function pageLoad() {
 
   // 🔥🔥🔥 YOUR CODE GOES HERE 🔥🔥🔥
   console.log(database)
+  numberOfProducts = database.products.length
   products = database.products
-  numberOfProducts = products.length
-  
-  promotion1Description = database.promotions[Math.floor(Math.random()*database.promotions.length)].description 
-  promotion2Description = database.promotions[Math.floor(Math.random()*database.promotions.length)].description
-  promotion3Description = database.promotions[Math.floor(Math.random()*database.promotions.length)].description
-  promotion1Icon = promotion1Description.type
-    if (promotion1Description.type == 'shipping') {
-      promotion1Icon = '🚛'
-    }else if (promotion1Description.type == 'discount') {
-      promotion1Icon = '🤑'
-      else if (promotion1Description.type == 'contest') {
-        promotion1Icon = '🎰'
-      }
-
-  promotion2Icon = '🚛'
-  promotion3Icon = '🎰'
-
+  let promo1 = database.promotions[Math.floor(Math.random() * database.promotions.length)]
+  let promo2 = database.promotions[Math.floor(Math.random() * database.promotions.length)]
+  let promo3 = database.promotions[Math.floor(Math.random() * database.promotions.length)]
+  promotion1Description = promo1.description
+  promotion2Description = promo2.description
+  promotion3Description = promo3.description
+  if (promo1.type == 'discount') {
+    promotion1Icon = '🤑'
+  } else if (promo1.type == 'shipping') {
+    promotion1Icon = '🚛 '
+  } else {
+    promotion1Icon = '🎰'
+  }
+  if (promo2.type == 'discount') {
+    promotion2Icon = '🤑'
+  } else if (promo2.type == 'shipping') {
+    promotion2Icon = '🚛 '
+  } else {
+    promotion2Icon = '🎰'
+  }
+  if (promo3.type == 'discount') {
+    promotion3Icon = '🤑'
+  } else if (promo3.type == 'shipping') {
+    promotion3Icon = '🚛 '
+  } else {
+    promotion3Icon = '🎰'
+  }
 
   
   //  👆 YOUR CODE ENDS HERE. DON'T CHANGE ANY OTHER CODE 👆
