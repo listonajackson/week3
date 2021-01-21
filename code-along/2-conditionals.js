@@ -6,9 +6,22 @@ function pageLoad() {
 
     // 🔥🔥🔥 YOUR CODE GOES HERE 🔥🔥🔥
     // The variable 'dinner' is already set to the value in the text input
-    let output
-    output = '🌮'
+    console.log(dinner)
 
+    let output //double equals lets you compare (comparison operator) == != >= < 
+    if (dinner == 'tacos') {
+      output = '🌮'
+    } else if (dinner == 'broccoli') {
+      output = '🥦'
+    } else if (dinner == 'pizza') {
+      output = '🍕'
+    } else if (dinner == 'kale' || dinner == 'spinach') {
+      output = '😝'
+    } else {
+      output = 'meh'
+    }
+    
+    
     //  👆 YOUR CODE ENDS HERE. DON'T CHANGE ANY OTHER CODE 👆
     /*
       this code does the work of writing the output to screen...
